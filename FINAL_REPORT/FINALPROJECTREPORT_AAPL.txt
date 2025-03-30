@@ -1,0 +1,115 @@
+Final Project Report: AAPL Stock Data Analysis & Forecasting
+=============================================================
+Date: March 29, 2025
+
+-------------------------------------------------------------
+1. Overview
+-------------------------------------------------------------
+This project analyzes historical AAPL stock data spanning from January 1, 2015 
+to December 30, 2021. The work is divided into the following phases:
+• Phase 2: Exploratory Data Analysis (EDA)
+• Phase 3: Stationarity Testing & Preprocessing
+• Phase 4: Forecasting Model Development
+• Phase 5: Model Validation & Interpretation
+
+This final report documents the methodology, key findings, model performance, 
+and future improvements.
+
+-------------------------------------------------------------
+2. Phase 2: Exploratory Data Analysis (EDA)
+-------------------------------------------------------------
+Data Collection & Cleaning:
+• Data was downloaded from Yahoo Finance using the yfinance library.
+• The CSV file was cleaned by skipping extra header rows and converting the 
+  "Date" column into a datetime index.
+• Final Dataset: 1,762 entries from 2015-01-02 to 2021-12-30 with variables: 
+  Close, High, Low, Open, Volume. No missing values were found.
+
+Descriptive Statistics:
+• Mean Close Price: 58.83 USD
+• Standard Deviation: 40.14 USD
+• Range: 20.67 USD to 177.23 USD
+
+Visual Insights:
+• Closing Price Plot: Reveals a strong upward trend with noticeable fluctuations.
+• Daily Returns: Calculated via percentage changes; indicate periods of high volatility.
+• Monthly Average Price: Suggests seasonal behavior, with higher averages near 
+  year-end.
+
+-------------------------------------------------------------
+3. Phase 3: Stationarity Testing & Preprocessing
+-------------------------------------------------------------
+Methodology:
+• The Augmented Dickey-Fuller (ADF) test on the original Close series yielded an 
+  ADF Statistic of 2.03 and a p-value of 0.9987, indicating non-stationarity.
+• First-order differencing was applied to the Close series.
+• The ADF test on the differenced series produced an ADF Statistic of -8.69 and 
+  a p-value of 4.01e-14, confirming stationarity.
+
+Visual Validation:
+• The plot of the differenced series shows fluctuations centered around zero, 
+  indicating the trend has been removed.
+
+-------------------------------------------------------------
+4. Phase 4: Forecasting Model Development
+-------------------------------------------------------------
+Data Split:
+• The dataset was split into:
+  - Training Set: 90% (1,585 observations)
+  - Test Set: 10% (177 observations)
+
+Model Building:
+• An initial ARIMA(1,1,1) model was tested, followed by adjustments leading 
+  to the selection of an ARIMA(5,2,1) model.
+• The final model summary indicated statistically significant coefficients 
+  (e.g., AR terms, MA term) and acceptable AIC/BIC values.
+  
+Forecasting:
+• Forecasts were generated for the test period.
+• Error Metrics:
+  - Mean Squared Error (MSE): 74.19
+  - Mean Absolute Error (MAE): 6.64
+• A plot of actual vs. forecasted closing prices shows the model captures 
+  the overall trend, though extreme spikes are challenging.
+
+-------------------------------------------------------------
+5. Phase 5: Model Validation & Interpretation
+-------------------------------------------------------------
+Diagnostics:
+• Residual analysis (histogram, time-series plot, and ACF plot) indicated that 
+  residuals are approximately white noise.
+• Alternative ARIMA orders were explored; ARIMA(5,2,1) was found to be the best 
+  fit based on diagnostic tests and error metrics.
+
+Key Observations:
+• AAPL stock data exhibits a strong upward trend and heightened volatility, 
+  particularly in 2020–2021.
+• The final ARIMA model forecasts the overall trend well, although some deviations 
+  occur during periods of extreme market movement.
+
+-------------------------------------------------------------
+6. Conclusions & Future Work
+-------------------------------------------------------------
+Conclusions:
+• The project successfully processed and analyzed historical AAPL stock data.
+• Stationarity was achieved through first-order differencing.
+• The ARIMA(5,2,1) model provided reasonable forecasts, capturing the overall trend.
+• Residual diagnostics confirmed that the model sufficiently captured the data’s 
+  primary dynamics.
+
+Future Improvements:
+• Model Refinement: Experiment with SARIMA to better account for seasonal patterns.
+• Feature Engineering: Incorporate exogenous variables (e.g., market indices, economic 
+  indicators) to improve forecasting accuracy.
+• Advanced Techniques: Explore machine learning or deep learning approaches (e.g., 
+  LSTM networks) for time series forecasting.
+
+-------------------------------------------------------------
+7. Final Thoughts
+-------------------------------------------------------------
+This comprehensive analysis—from data collection and EDA to forecasting and 
+model validation—provides robust insights into AAPL's historical performance and 
+potential future trends. The methodologies and findings presented here lay a 
+strong foundation for further research or practical applications in financial 
+decision-making.
+

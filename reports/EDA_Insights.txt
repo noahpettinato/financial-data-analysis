@@ -1,0 +1,82 @@
+Exploratory Data Analysis (EDA) Insights for AAPL Stock Data (2015-2021)
+========================================================================
+
+Overview:
+---------
+This document summarizes the findings from the EDA performed on the historical 
+AAPL stock data spanning from January 1, 2015, to December 31, 2021. The 
+analysis was conducted using Python in a Jupyter Notebook, and the key insights 
+are detailed below.
+
+1. Data Health Check:
+---------------------
+- **Missing Values:**
+  - The output of `df.isnull().sum()` confirmed that there are no missing 
+    values in the dataset. All columns (Close, High, Low, Open, Volume) have 
+    complete data.
+
+- **Summary Statistics (from df.describe()):**
+  - **Count:** 1762 entries for each of the numeric columns.
+  - **Close:** 
+      - Mean: 58.83, Std: 40.14, Min: 20.67, 25th Percentile: 28.20,
+        Median: 41.67, 75th Percentile: 74.96, Max: 177.23
+  - **High:** 
+      - Mean: 59.42, Std: 40.59, Min: 20.98, 25th Percentile: 28.41,
+        Median: 41.95, 75th Percentile: 75.65, Max: 179.00
+  - **Low:** 
+      - Mean: 58.18, Std: 39.63, Min: 20.48, 25th Percentile: 27.99,
+        Median: 41.29, 75th Percentile: 73.99, Max: 175.46
+  - **Open:** 
+      - Mean: 58.79, Std: 40.10, Min: 20.60, 25th Percentile: 28.20,
+        Median: 41.66, 75th Percentile: 74.82, Max: 178.01
+  - **Volume:** 
+      - Mean: 138,059,200, Std: 69,779,220, Min: 41,000,000,
+        25th Percentile: 90,504,620, Median: 118,970,800,
+        75th Percentile: 165,415,900, Max: 648,825,200
+
+2. Closing Price Trend:
+-----------------------
+- The closing price generally shows an upward trend over the analyzed period.
+- Notable observations:
+  - **Spikes:** Significant spikes in stock price are observed between 2018 and 2019.
+  - **Dip:** There is a noticeable dip between 2019 and 2021.
+  - Post-dip, the price shows a consistent upward increase.
+  
+3. Daily Returns & Volatility:
+------------------------------
+- **Daily Returns:**
+  - Daily percentage changes were calculated using `df["Close"].pct_change()`.
+- **Volatility Insights:**
+  - The highest volatility (largest daily returns) is observed between 2020 and 2021.
+  - The second highest volatility is observed between 2019 and 2020.
+  - A third period of elevated volatility occurs again during 2020-2021.
+  - The rest of the periods show relatively stable daily changes.
+
+4. Seasonality:
+---------------
+- **Monthly Analysis:**
+  - Average monthly closing prices indicate that the stock price tends 
+    to increase as the year progresses.
+  - **Highest Average Prices:** Observed in December.
+  - **Comparative Insights:**
+    - January typically shows lower average prices compared to December, 
+      which may be attributed to the holiday effect.
+    - There is a steady increase from February through October, with a small 
+      dip in October before rising again in November and December.
+
+Summary:
+-----------------------
+- The dataset is clean with no missing values.
+- The statistical summary provides a clear picture of the distribution and 
+  variability of stock prices and volume.
+- Trends and volatility analysis highlight key market events, such as the 
+  upward trend overall, dips, and spikes in specific periods.
+- Seasonal patterns suggest potential cyclical behavior that may influence 
+  forecasting models.
+
+Next Phase:
+-----------
+- **Phase 3: Stationarity Testing & Preprocessing:**  
+  The next step will be to test for stationarity (using the Augmented Dickey-Fuller 
+  test) and, if needed, transform the data (e.g., differencing) to prepare it for 
+  forecasting models like ARIMA.

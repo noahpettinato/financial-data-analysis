@@ -1,0 +1,68 @@
+AAPL Stock Price Forecasting & Model Validation Report (Phase 5)
+===============================================================
+
+Overview:
+---------
+This document summarizes the ARIMA-based forecasting and model validation approach applied to the AAPL stock data from January 2015 to December 2021. The analysis includes stationarity testing, ARIMA model fitting, forecasting evaluation, and residual analysis.
+
+1. Stationarity Testing:
+-------------------------
+- Before Differencing:
+  - ADF Statistic: 1.4833
+  - p-value: 0.9975
+  (Indicates the original series is non-stationary.)
+
+- After 1st Differencing:
+  - ADF Statistic: -8.2072
+  - p-value: 6.97e-13
+  (The differenced series is stationary, justifying further modeling.)
+
+2. ARIMA Model Fitting & Forecasting:
+--------------------------------------
+- Chosen Model: ARIMA(5, 2, 1)
+- Model Summary Highlights:
+  - ar.L1: -0.1207 (p = 0.022)
+  - ar.L2: -0.0043 (p = 0.935)
+  - ar.L3: 0.0184 (p = 0.757)
+  - ar.L4: 0.0103 (p = 0.844)
+  - ar.L5: -0.0007 (p = 0.990)
+  - ma.L1: -0.9973 (p < 0.001)
+  - sigma²: 1.5102
+
+- Forecasting Details:
+  - Forecast generated over a test period equal to 177 trading days.
+  - Forecast Head (First 5 values):
+      2021-04-21: ~130.58
+      2021-04-22: ~130.69
+      2021-04-23: ~130.80
+      2021-04-26: ~130.92
+      2021-04-27: ~131.06
+  - Forecast Tail (Last 5 values):
+      2021-12-17: ~153.19
+      2021-12-20: ~153.32
+      2021-12-21: ~153.45
+      2021-12-22: ~153.58
+      2021-12-23: ~153.72
+
+3. Model Performance Evaluation:
+----------------------------------
+- Mean Squared Error (MSE): 74.19
+- Mean Absolute Error (MAE): 6.64
+
+4. Residual Analysis:
+---------------------
+- Residual Distribution:
+  Histograms show residuals centered around zero, though some heteroskedasticity is present—common in financial time series.
+  
+- Time Series of Residuals:
+  Plots indicate no strong patterns or autocorrelation, suggesting the model has effectively captured the main dynamics.
+
+Conclusions & Future Steps:
+----------------------------
+- The ARIMA(5,2,1) model provides a reasonable forecast for AAPL stock prices over the test period.
+- First differencing successfully transformed the series to stationarity.
+- While the model captures the overall upward trend, inherent volatility in the stock data remains challenging.
+- Potential Improvements:
+  1. Further parameter tuning (e.g., exploring ARIMA(1,1,1) or other orders).
+  2. Considering alternative models like SARIMA, SARIMAX, or even machine learning approaches to better capture volatility.
+  3. Incorporating additional exogenous variables to enhance forecasting accuracy.

@@ -1,0 +1,81 @@
+AAPL Stock Price Forecasting (2015-2021)
+=============================================================
+
+Overview:
+---------
+This document summarizes the ARIMA-based forecasting approach applied to the 
+AAPL stock dataset from January 1, 2015, to December 30, 2021. The analysis was 
+conducted using Python in a Jupyter Notebook titled `AAPL_Forecasting.ipynb`.
+
+1. Data Loading & Structure:
+----------------------------
+- **Initial CSV Columns:** ['Price', 'Close', 'High', 'Low', 'Open', 'Volume']
+- **Loaded Dataset Details:**
+  - DatetimeIndex: 1762 entries (2015-01-02 to 2021-12-30)
+  - Columns: Close, High, Low, Open, Volume
+  - No missing values
+- **Plot:** The closing price chart (2015-2021) shows a strong upward trend, 
+  especially accelerating after 2018.
+
+2. Train/Test Split:
+--------------------
+- **Split Ratio:** 90% training (1,585 rows), 10% testing (177 rows)
+- **Training Set:** 2015-01-02 to ~2021-xx-xx
+- **Test Set:** ~2021-xx-xx to 2021-12-30
+
+3. Model Identification (ACF & PACF):
+-------------------------------------
+- **First Differencing:** From Phase 3, we know the series is non-stationary 
+  and becomes stationary after first differencing (d=1).
+- **ACF & PACF of Differenced Series:**  
+  - Plots indicate relatively quick cutoffs near lag 1 for both ACF and PACF, 
+    suggesting ARIMA(1,1,1) as a reasonable starting model.
+
+4. ARIMA(1,1,1) Model Results:
+------------------------------
+- **SARIMAX Results (ARIMA(1,1,1)):**
+  - **AR (ar.L1):** -0.3595 (p < 0.001)
+  - **MA (ma.L1):** 0.2501 (p < 0.01)
+  - **Sigma²:** 1.5696
+  - **AIC:** 5215.365
+  - **BIC:** 5231.468
+- **Key Observations:**
+  - The Ljung-Box (L1) Q-test shows no significant autocorrelation at lag 1.
+  - Jarque-Bera test indicates non-normal residuals (common in financial data).
+  - The model captures the general trend but may have limitations 
+    in capturing extreme volatility.
+
+5. Forecasting & Visual Evaluation:
+-----------------------------------
+- **Forecast Period:** 177 steps (matching the test set).
+- **Plot:** The forecast vs. actual test data shows that:
+  - The model follows the overall upward trajectory.
+  - Large spikes may be under/overestimated due to inherent volatility.
+
+6. Residual Analysis:
+---------------------
+- **Residuals:**  
+  - Appear to be centered around zero but show signs of heteroskedasticity 
+    (consistent with financial time series).
+- **ACF of Residuals:**  
+  - Minimal autocorrelation, suggesting that the ARIMA(1,1,1) model 
+    effectively captures the main patterns.
+
+7. Conclusions & Next Steps:
+----------------------------
+- **Conclusions:**
+  - ARIMA(1,1,1) provides a reasonable baseline forecast, aligning with 
+    the differencing insights from Phase 3.
+  - The strong upward trend is well-modeled, but large price fluctuations 
+    remain challenging.
+
+- **Potential Improvements:**
+  1. **Parameter Tuning:** Try ARIMA(2,1,1) or ARIMA(1,1,2) to see if 
+     AIC/BIC improve.
+  2. **Seasonal ARIMA (SARIMA):** If monthly or quarterly seasonality 
+     is detected, consider SARIMA for improved performance.
+  3. **Additional Exogenous Variables:** Incorporate macroeconomic 
+     factors (e.g., interest rates, market indices) for better context.
+  4. **Other Models:** Explore advanced models like SARIMAX, 
+     Prophet, or deep learning for potentially better forecasts.
+

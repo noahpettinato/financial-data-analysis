@@ -1,0 +1,60 @@
+Stationarity Analysis for AAPL Stock Data (2015-2021)
+==========================================================================
+
+Overview:
+---------
+This document summarizes the stationarity testing and preprocessing performed 
+on the historical AAPL stock data spanning from January 1, 2015, to December 31, 2021. 
+The analysis was conducted using Python in a Jupyter Notebook, and the key insights 
+are detailed below.
+
+1. Augmented Dickey-Fuller (ADF) Test on Original Series:
+---------------------------------------------------------
+- **Initial Stationarity Test (Close Prices)**:
+  - **ADF Statistic:** 2.0334
+  - **p-value:** 0.9987 ❌ **(Not Stationary)**
+  - **Critical Values:**
+    - 1%: -3.4341
+    - 5%: -2.8632
+    - 10%: -2.5677
+  - **Conclusion:** The p-value is greater than 0.05, meaning we fail to reject the 
+    null hypothesis. This confirms that the original closing price series is non-stationary 
+    and requires transformation.
+
+2. First-Order Differencing:
+----------------------------
+- **To remove trends and achieve stationarity, first-order differencing was applied.**
+  - The transformed series is calculated as:  
+    `df["Close_diff"] = df["Close"].diff()`
+  - The first row becomes NaN and is removed.
+
+3. ADF Test on First-Order Differenced Series:
+----------------------------------------------
+- **ADF Statistic (Differenced):** -8.6923
+- **p-value (Differenced):** 4.009e-14 ✅ **(Stationary)**
+- **Critical Values:**
+  - 1%: -3.4341
+  - 5%: -2.8632
+  - 10%: -2.5677
+- **Conclusion:** The p-value is now significantly below 0.05, and the ADF statistic 
+  is lower than all critical values. This confirms that the first-differenced series 
+  is **stationary** and suitable for forecasting.
+
+4. Observations from Differenced Series:
+----------------------------------------
+- The differenced series shows steady **positive and negative spikes** up until **2018**, 
+  where volatility starts to increase.
+- **2020-2021:** The largest spikes occur, indicating extreme market fluctuations.
+- **Post-2021:** The differenced values remain higher than earlier years but are 
+  relatively stable compared to 2020-2021.
+- The increased volatility aligns with major market events like the COVID-19 pandemic 
+  and economic uncertainty.
+
+Summary:
+--------
+- **❌ The original closing price series was non-stationary (trending over time).**
+- **✅ First-order differencing successfully removed the trend, making the series stationary.**
+- **📈 Volatility increased significantly after 2018, with extreme fluctuations in 2020-2021.**
+- **🚀 The dataset is now ready for forecasting using models like ARIMA.**
+
+
