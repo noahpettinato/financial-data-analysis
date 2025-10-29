@@ -24,5 +24,11 @@ pip install jupyter pandas numpy matplotlib seaborn yfinance statsmodels
 ## Results
 The project successfully predicts stock price trends using ARIMA, providing insights into market movements.
 
+## Visualization
+
+Below is an example output showing the ARIMA model’s forecasted vs. actual stock prices.
+
+![ARIMA Forecast Plot](preview.png)
+
 ## Author
 Developed by Noah Pettinato.
