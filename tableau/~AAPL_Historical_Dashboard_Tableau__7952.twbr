@@ -1,0 +1,724 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.1003.1601                               -->
+<workbook original-version='18.1' source-build='2025.2.4 (20252.25.1003.1601)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <BasicButtonObject />
+    <BasicButtonObjectTextSupport />
+    <DashboardExportButton />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='AAPL_historical_clean' inline='true' name='federated.1d9r4jz1st2vl51gv96b60uee3qe' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='AAPL_historical_clean' name='textscan.0wg348k0pi1c1e145bm8113lca99'>
+            <connection class='textscan' directory='C:/Users/noahp/OneDrive/Desktop' filename='AAPL_historical_clean.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0wg348k0pi1c1e145bm8113lca99' name='AAPL_historical_clean.csv' table='[AAPL_historical_clean#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='real' name='Close' ordinal='1' />
+            <column datatype='real' name='High' ordinal='2' />
+            <column datatype='real' name='Low' ordinal='3' />
+            <column datatype='real' name='Open' ordinal='4' />
+            <column datatype='integer' name='Volume' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[AAPL_historical_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[AAPL_historical_clean.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Close</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Close]</local-name>
+            <parent-name>[AAPL_historical_clean.csv]</parent-name>
+            <remote-alias>Close</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>High</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[High]</local-name>
+            <parent-name>[AAPL_historical_clean.csv]</parent-name>
+            <remote-alias>High</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Low</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Low]</local-name>
+            <parent-name>[AAPL_historical_clean.csv]</parent-name>
+            <remote-alias>Low</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Open</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Open]</local-name>
+            <parent-name>[AAPL_historical_clean.csv]</parent-name>
+            <remote-alias>Open</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Volume</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Volume]</local-name>
+            <parent-name>[AAPL_historical_clean.csv]</parent-name>
+            <remote-alias>Volume</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Volume (B)' datatype='real' name='[Calculation_559572255094157314]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Volume] / 1e9' />
+      </column>
+      <column caption='Avg Close' datatype='real' name='[Calculation_559572255097430019]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([Close])' />
+      </column>
+      <column caption='Max Close' datatype='real' name='[Calculation_559572255097520132]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='MAX([Close])' />
+      </column>
+      <column caption='Total Volume (B)' datatype='real' name='[Calculation_559572255097577477]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Volume]) / 1e9' />
+      </column>
+      <column caption='AAPL_historical_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_0dohrdv0fu3yuq1fttl8j167kj5v.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='10/31/2025 09:45:39 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>AAPL_historical_clean.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1762</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Close</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Close]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Close</remote-alias>
+              <ordinal>1</ordinal>
+              <family>AAPL_historical_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1493</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>High</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[High]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>High</remote-alias>
+              <ordinal>2</ordinal>
+              <family>AAPL_historical_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1762</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Low</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Low]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Low</remote-alias>
+              <ordinal>3</ordinal>
+              <family>AAPL_historical_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1762</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Open</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Open]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Open</remote-alias>
+              <ordinal>4</ordinal>
+              <family>AAPL_historical_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1762</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Volume</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Volume]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Volume</remote-alias>
+              <ordinal>5</ordinal>
+              <family>AAPL_historical_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1762</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Date' />
+        <field-sort-custom-order field='Calculation_559572255097430019' />
+        <field-sort-custom-order field='Close' />
+        <field-sort-custom-order field='High' />
+        <field-sort-custom-order field='Low' />
+        <field-sort-custom-order field='Open' />
+        <field-sort-custom-order field='Volume' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field='Calculation_559572255094157314' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='AAPL_historical_clean.csv' id='AAPL_historical_clean.csv_D9135E0A74BE48D39FE20ABAFAF14FED'>
+            <properties context=''>
+              <relation connection='textscan.0wg348k0pi1c1e145bm8113lca99' name='AAPL_historical_clean.csv' table='[AAPL_historical_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='Date' ordinal='0' />
+                  <column datatype='real' name='Close' ordinal='1' />
+                  <column datatype='real' name='High' ordinal='2' />
+                  <column datatype='real' name='Low' ordinal='3' />
+                  <column datatype='real' name='Open' ordinal='4' />
+                  <column datatype='integer' name='Volume' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='16'>AAPL Daily Closing Price (USD)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='AAPL_historical_clean' name='federated.1d9r4jz1st2vl51gv96b60uee3qe' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1d9r4jz1st2vl51gv96b60uee3qe'>
+            <column datatype='real' name='[Close]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column-instance column='[Close]' derivation='Avg' name='[avg:Close:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[none:Date:qk]' filter-group='3' included-values='in-range-or-null'>
+            <min>#2015-01-02#</min>
+            <max>#2021-12-29#</max>
+          </filter>
+          <slices>
+            <column>[federated.1d9r4jz1st2vl51gv96b60uee3qe].[none:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[avg:Close:qk]' value='c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[none:Date:qk]' value='Date'>
+              <formatted-text>
+                <run fontsize='18'>Date</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+          </pane>
+        </panes>
+        <rows>[federated.1d9r4jz1st2vl51gv96b60uee3qe].[avg:Close:qk]</rows>
+        <cols>[federated.1d9r4jz1st2vl51gv96b60uee3qe].[none:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{A63ED3DD-3686-42DA-9507-254A43715549}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='18'>AAPL Daily Trading Volume (in Billions)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='AAPL_historical_clean' name='federated.1d9r4jz1st2vl51gv96b60uee3qe' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1d9r4jz1st2vl51gv96b60uee3qe'>
+            <column caption='Volume (B)' datatype='real' name='[Calculation_559572255094157314]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Volume] / 1e9' />
+            </column>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Volume]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_559572255094157314]' derivation='Sum' name='[sum:Calculation_559572255094157314:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Year' name='[yr:Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[none:Date:qk]' filter-group='3' included-values='in-range-or-null'>
+            <min>#2015-01-02#</min>
+            <max>#2021-12-29#</max>
+          </filter>
+          <slices>
+            <column>[federated.1d9r4jz1st2vl51gv96b60uee3qe].[none:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' data-class='subtotal' field='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[sum:Calculation_559572255094157314:qk]' value='n#,##0&quot;B&quot;;-#,##0&quot;B&quot;' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[sum:Calculation_559572255094157314:qk]' value='n#,##0&quot;B&quot;;-#,##0&quot;B&quot;' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.1d9r4jz1st2vl51gv96b60uee3qe].[sum:Calculation_559572255094157314:qk]</rows>
+        <cols>[federated.1d9r4jz1st2vl51gv96b60uee3qe].[yr:Date:ok]</cols>
+      </table>
+      <simple-id uuid='{FDB32E12-F909-4D23-A8C0-E696EAA1DF48}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontsize='18'>KPIs</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='AAPL_historical_clean' name='federated.1d9r4jz1st2vl51gv96b60uee3qe' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1d9r4jz1st2vl51gv96b60uee3qe'>
+            <column caption='Avg Close' datatype='real' name='[Calculation_559572255097430019]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Close])' />
+            </column>
+            <column caption='Max Close' datatype='real' name='[Calculation_559572255097520132]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='MAX([Close])' />
+            </column>
+            <column caption='Total Volume (B)' datatype='real' name='[Calculation_559572255097577477]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Volume]) / 1e9' />
+            </column>
+            <column datatype='real' name='[Close]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Volume]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_559572255097430019]' derivation='User' name='[usr:Calculation_559572255097430019:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_559572255097520132]' derivation='User' name='[usr:Calculation_559572255097520132:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_559572255097577477]' derivation='User' name='[usr:Calculation_559572255097577477:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1d9r4jz1st2vl51gv96b60uee3qe].[usr:Calculation_559572255097430019:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1d9r4jz1st2vl51gv96b60uee3qe].[usr:Calculation_559572255097520132:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1d9r4jz1st2vl51gv96b60uee3qe].[usr:Calculation_559572255097577477:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[none:Date:qk]' filter-group='3' included-values='in-range-or-null'>
+            <min>#2015-01-02#</min>
+            <max>#2021-12-29#</max>
+          </filter>
+          <slices>
+            <column>[federated.1d9r4jz1st2vl51gv96b60uee3qe].[:Measure Names]</column>
+            <column>[federated.1d9r4jz1st2vl51gv96b60uee3qe].[none:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[usr:Calculation_559572255097430019:qk]' value='c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)' />
+            <format attr='text-format' field='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[usr:Calculation_559572255097520132:qk]' value='c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)' />
+            <format attr='text-format' field='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[usr:Calculation_559572255097577477:qk]' value='n#,##0&quot;B&quot;;-#,##0&quot;B&quot;' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[Multiple Values]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontalignment='0' fontsize='18'><![CDATA[<[federated.1d9r4jz1st2vl51gv96b60uee3qe].[:Measure Names]>: <[federated.1d9r4jz1st2vl51gv96b60uee3qe].[Multiple Values]>]]></run>
+                <run fontalignment='0'>Æ&#10;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.8790607452392578' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.1d9r4jz1st2vl51gv96b60uee3qe].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{5E1343F7-660A-4702-971F-5FD9756EFAC5}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='16' lmargin='600' rmargin='600'>AAPL Historical Dashboard – Tableau</run>
+            <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='16' lmargin='600' rmargin='600'>
+Data Source: Yahoo Finance (2015 – 2021)</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='860' maxwidth='650' minheight='560' minwidth='420' />
+      <datasources>
+        <datasource caption='AAPL_historical_clean' name='federated.1d9r4jz1st2vl51gv96b60uee3qe' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1d9r4jz1st2vl51gv96b60uee3qe'>
+        <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+        <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98130' id='20' param='vert' type-v2='layout-flow' w='97538' x='1231' y='935'>
+            <zone h='7127' id='21' type-v2='title' w='97538' x='1231' y='935'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='91003' id='12' param='horz' type-v2='layout-flow' w='97538' x='1231' y='8062'>
+              <zone h='91003' id='9' param='vert' type-v2='layout-flow' w='97538' x='1231' y='8062'>
+                <zone h='91003' id='7' type-v2='layout-basic' w='97538' x='1231' y='8062'>
+                  <zone h='14730' id='3' name='Sheet 3' w='48769' x='1231' y='8062'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='38135' id='5' name='Sheet 1' w='97538' x='1231' y='22792'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='38138' id='6' name='Sheet 2' w='97538' x='1231' y='60927'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='14730' id='13' name='Sheet 1' param='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[none:Date:qk]' type-v2='filter' values='database' w='48769' x='50000' y='8062'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='6075' id='22' type-v2='dashboard-object' w='25231' x='72923' y='818'>
+          <button action='' button-click-action-metadata='pdf' button-type='text'>
+            <export-button-action>tabdoc:abstract-dashboard-button-export-wrapper dashboard-button-export-type=&quot;pdf&quot; dashboarddoc-id=&quot;{4AE591A4-999F-4654-A058-9A7AE3567775}&quot;</export-button-action>
+            <button-visual-state>
+              <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+              <format attr='background-color' value='#333333' />
+            </button-visual-state>
+          </button>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='16' lmargin='600' rmargin='600'>AAPL Historical Dashboard – Tableau</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='16' lmargin='600' rmargin='600'>
+Data Source: Yahoo Finance (2015 – 2021)</run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='850' minheight='850' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='17' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98130' id='16' param='vert' type-v2='layout-flow' w='97538' x='1231' y='935'>
+                <zone fixed-size='119' h='14732' id='3' is-fixed='true' name='Sheet 3' w='48769' x='1231' y='8062'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='14732' id='13' name='Sheet 1' param='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[none:Date:qk]' type-v2='filter' values='database' w='48769' x='50000' y='8062'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='38135' id='5' is-fixed='true' name='Sheet 1' w='97538' x='1231' y='22794'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='38136' id='6' is-fixed='true' name='Sheet 2' w='97538' x='1231' y='60929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{4AE591A4-999F-4654-A058-9A7AE3567775}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.1d9r4jz1st2vl51gv96b60uee3qe].[none:Date:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{42184EA2-C10E-48F5-BE3A-5E99B39B6E23}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CA315A81-5D81-4F72-B5D2-FA2C366C6D0F}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0DBB3881-5532-4770-A06D-E7A9C234F5FD}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 1'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 3' />
+      </viewpoints>
+      <active id='22' />
+      <simple-id uuid='{40786B7C-0ACE-4915-B9F7-1AF3F63FE7AB}' />
+    </window>
+  </windows>
+</workbook>
